@@ -1,0 +1,240 @@
+/* Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+
+  /* 🔥 Dual background image blend */
+  background-image: url("body.png");
+
+  /* 📌 Image Settings */
+  background-size: cover, cover, cover;
+  background-position: right center, left center, center;
+  background-repeat: no-repeat;
+
+  /* Smooth professional look */
+  background-attachment: fixed;
+}
+
+
+/* Corner Gradient Blocks */
+.corner {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+ background: linear-gradient(135deg, #034d2f, transparent);
+  border-bottom-right-radius: 20px;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+ background: linear-gradient(135deg, #034d2f, transparent);
+  border-top-right-radius: 20px;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #034d2f, transparent);
+  border-bottom-left-radius: 20px;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(225deg, #034d2f, transparent);
+  border-top-left-radius: 20px;
+}
+
+/* Hero Center */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+/* GLASS CARD */
+.card {
+  position: relative;
+  padding: 45px 35px;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+
+  /* Transparent Glass */
+  background: rgba(194, 189, 189, 0.1);
+  backdrop-filter: blur(12px);
+
+  /* Mild Green Outer Glow */
+  box-shadow: 0 0 25px rgba(0, 255, 140, 0.3);
+
+  text-align: center;
+  animation: slideUp 1s ease;
+}
+
+/* Card Heading */
+.card h1 {
+  font-size: 1.9rem;
+  margin: 0 0 10px;
+  text-shadow: 0 0 8px rgba(180, 175, 175, 0.4);
+}
+
+.tag {
+  color: #0c0c0c;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.desc {
+  margin-bottom: 25px;
+  font-size: 1rem;
+  color: #0c0c0c;
+}
+
+/* WhatsApp Button */
+.btn {
+  display: inline-block;
+  background: #0aba55;
+  padding: 14px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: 0.25s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+/* Pulse Animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0px rgba(0,255,140,0.3); }
+  50% { box-shadow: 0 0 22px rgba(0,255,140,0.6); }
+  100% { box-shadow: 0 0 0px rgba(0,255,140,0.3); }
+}
+
+/* Fade Animation */
+.fade-in {
+  animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.card-wrapper {
+  position: relative;
+  width: 340px;
+  margin: 80px auto;
+}
+
+/* ===== CARD DESIGN ===== */
+.card {
+  position: relative;
+  padding: 28px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(0, 120, 60, 0.4);
+  text-align: center;
+  z-index: 3;
+}
+
+/* ===== FLIGHT ORBIT AROUND CARD ===== */
+.flight-orbit {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  right: -40px;
+  bottom: -40px;
+  animation: circleMove 7s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.flight-orbit img {
+  width: 70px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+}
+
+/* 🔄 Orbit animation */
+@keyframes circleMove {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* ===== EMOJI FLOAT ANIMATION ===== */
+.emoji-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* user click block aagama irukum */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.emoji-area span {
+  position: absolute;
+  bottom: -50px;
+  font-size: 40px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.7;
+}
+
+/* Random positions */
+.emoji-area span:nth-child(1) { left: 10%; animation-duration: 7s; }
+.emoji-area span:nth-child(2) { left: 30%; animation-duration: 9s; }
+.emoji-area span:nth-child(3) { left: 50%; animation-duration: 6s; }
+.emoji-area span:nth-child(4) { left: 70%; animation-duration: 8s; }
+.emoji-area span:nth-child(5) { left: 90%; animation-duration: 10s; }
+
+/* Upward floating effect */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 40, 25, 0.65);
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+  color: #d7ffe8;
+}
